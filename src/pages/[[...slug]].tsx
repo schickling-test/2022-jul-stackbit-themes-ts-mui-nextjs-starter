@@ -5,12 +5,12 @@ import type * as types from 'types';
 import { DynamicComponent } from '../components/DynamicComponent';
 import { Header } from '../components/sections/Header';
 import { Footer } from '../components/sections/Footer';
-import { pagesByType, siteConfig, urlToContent } from '../utils/content';
 
 import MuiBox from '@mui/material/Box';
 import MuiContainer from '@mui/material/Container';
+import { allPages, config } from 'contentlayer/generated';
 
-export type Props = { page: types.Page; siteConfig: types.Config; };
+export type Props = { page: types.Page; siteConfig: types.Config };
 
 const Page: React.FC<Props> = ({ page, siteConfig }) => {
     return (
@@ -38,15 +38,11 @@ const Page: React.FC<Props> = ({ page, siteConfig }) => {
 export default Page;
 
 export const getStaticPaths: GetStaticPaths = () => {
-    const pages = pagesByType('Page');
-    return {
-        paths: Object.keys(pages),
-        fallback: false
-    };
+    return { paths: allPages.map((_) => _.slug), fallback: false };
 };
 
-export const getStaticProps: GetStaticProps<Props, { slug: string[] }> =  ({ params }) => {
+export const getStaticProps: GetStaticProps<Props, { slug: string[] }> = ({ params }) => {
     const url = '/' + (params?.slug || []).join('/');
-    const page = urlToContent(url) as types.Page;
-    return { props: { page , siteConfig: siteConfig() } };
+    const page = allPages.find((_) => _.slug === url)!;
+    return { props: { page, siteConfig: config } };
 };
