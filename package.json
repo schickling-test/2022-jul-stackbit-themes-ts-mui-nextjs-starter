@@ -30,6 +30,7 @@
     "contentlayer": "0.2.6",
     "next-contentlayer": "0.2.6",
     "@contentlayer/experimental-source-files-stackbit": "0.2.6",
+    "experimental-next-stackbit": "0.0.1",
     "eslint": "^7.29.0",
     "eslint-config-next": "^12.2.0",
     "eslint-config-prettier": "^8.3.0",
