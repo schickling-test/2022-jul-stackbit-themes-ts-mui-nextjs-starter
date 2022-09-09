@@ -27,9 +27,9 @@
   "devDependencies": {
     "@types/react": "^17.0.37",
     "autoprefixer": "^10.2.6",
-    "contentlayer": "0.2.8-dev.12",
-    "next-contentlayer": "0.2.8-dev.12",
-    "@contentlayer/experimental-source-files-stackbit": "0.2.8-dev.12",
+    "contentlayer": "0.2.8",
+    "next-contentlayer": "0.2.8",
+    "@contentlayer/experimental-source-files-stackbit": "0.2.8",
     "experimental-next-stackbit": "0.0.1",
     "eslint": "^7.29.0",
     "eslint-config-next": "^12.2.0",
