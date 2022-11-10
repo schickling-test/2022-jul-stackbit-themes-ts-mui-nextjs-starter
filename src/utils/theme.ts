@@ -1,5 +1,5 @@
-const themeStyle = require('../../content/data/style.json');
-import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+const themeStyle = require('../../content/data/style.json')
+import { createTheme, responsiveFontSizes } from '@mui/material/styles'
 
 let theme = createTheme({
   palette: {
@@ -24,10 +24,8 @@ let theme = createTheme({
     },
     h3: {
       fontWeight: 500,
-    }
-  }
-});
+    },
+  },
+})
 
-theme = responsiveFontSizes(theme);
-
-export default theme;
+export default responsiveFontSizes(theme)

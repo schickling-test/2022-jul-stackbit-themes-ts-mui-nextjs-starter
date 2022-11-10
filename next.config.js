@@ -1,7 +1,4 @@
-module.exports = {
-    typescript: { ignoreBuildErrors: false },
-    webpack: (config) => {
-        config.watchOptions.ignored.push('/content/');
-        return config;
-    }
-};
+const { withContentlayer } = require('next-contentlayer')
+const { withStackbit } = require('experimental-next-stackbit')
+
+module.exports = withStackbit(withContentlayer({}));
